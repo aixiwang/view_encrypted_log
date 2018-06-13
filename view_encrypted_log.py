@@ -61,7 +61,15 @@ if __name__ == '__main__':
     writefile('output.txt',b)
     myaes_decrypt(aes_key,'output.txt','input2.txt')
     s = readfile('input2.txt').decode('utf-8')
-    os.system('rm -rf input2.txt')
+    try:
+        os.system('rm -rf input2.txt')
+    except:
+        pass
+    try:
+        os.system('del input2.txt')
+    except:
+        pass
+    
     print(s)
 
     
